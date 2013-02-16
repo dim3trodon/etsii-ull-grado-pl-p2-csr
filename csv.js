@@ -11,7 +11,11 @@ function calculate() {
   var result;
   var original       = document.getElementById("original");
   var temp = original.value;
-  var regexp = /_____________________________________________/g;
+  var regexp = /(\"(\s*[a-z0-9,;]\s*)+\")|((\s*\w\s*)+)/ig;
+  //var regexp = /(\".+\"(?=\;)|\n)|((\s*\w\s*)+)/g;
+  //var regexp = /((\s*\w\s*)+)|(\".+\")/g;
+  //var regexp = /(\s+?\w+)|(\".*\")/g;
+  // /,(?!(?:[^",]|[^"],[^"])+")/
   var lines = temp.split(/\n+\s*/);
   var commonLength = NaN;
   var r = [];
@@ -48,7 +52,7 @@ function calculate() {
       r.push(tr+_.template(row, {items : result})+"</tr>");
     }
     else {
-      alert('ERROR! row '+temp+' does not look as legal CSV');
+      //alert('ERROR! row '+temp+' does not look as legal CSV');
       error = true;
     }
   }
