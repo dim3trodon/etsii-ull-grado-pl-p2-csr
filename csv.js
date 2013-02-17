@@ -11,7 +11,7 @@ function calculate() {
   var result;
   var original       = document.getElementById("original");
   var temp = original.value;
-  var regexp = /(\"(\s*[a-z0-9,;]\s*)+\")|((\s*\w\s*)+)/ig;
+  var regexp = /(\"((\s*[a-z0-9,;]\s*)+?)\")|(((\s*\w\s*)+))/g;
   //var regexp = /(\".+\"(?=\;)|\n)|((\s*\w\s*)+)/g;
   //var regexp = /((\s*\w\s*)+)|(\".+\")/g;
   //var regexp = /(\s+?\w+)|(\".*\")/g;
